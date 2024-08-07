@@ -44,7 +44,7 @@ contract MerkleAirdrop {
     function getMerkeRoot() external view returns (bytes32) {
         return i_merkleRoot;
     }
-    functon getAirdropToken() external view returns (IERC20) {
+    function getAirdropToken() external view returns (IERC20) {
         return i_airdropToken;
     } 
 }
