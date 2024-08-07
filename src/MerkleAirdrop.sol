@@ -31,7 +31,7 @@ contract MerkleAirdrop {
             revert MerkleAirdrop__AlreadyClaimed(account);
         }
         bytes32 leaf = keccak256(
-            bytes.concat(keccak256(abi.encodePacked(account, amount)))
+            bytes.concat(keccak256(abi.encode(account, amount)))
         );
         if (!MerkleProof.verify(merkleProof, i_merkleRoot, leaf)) {
             revert MerkleAirdrop__InvalidProof(account);
